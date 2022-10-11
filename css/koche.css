@@ -156,18 +156,18 @@ section {
 	width: 20vw;
 	height: 7vh;
 	font-weight: bold;
-	margin-top: 0vw;
+	margin-top: 18vw;
 	right: 45vw;
 }
 
 .banner .arrow-left {
-	margin-top: 0vw;
+	margin-top: 12vw;
 	width: 100%;
 	left: 22vw;
 }
 
 .banner .arrow-right {
-	margin-top: 0vw;
+	margin-top: 12vw;
 	right: 6vw;
 }
 
