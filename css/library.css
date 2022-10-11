@@ -127,7 +127,7 @@ input, textarea {
 	/*linear-gradient(210deg, #16F5DF 9.4%, #00B5EC 94.71%)*/
 	font-weight: 600;
 	cursor: pointer;
-	transition: all 1s;
+	transition: all 0.1s;
 }
 
 @media (max-width: 800px) {
