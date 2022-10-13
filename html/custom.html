@@ -15,9 +15,11 @@
 	<link rel = "stylesheet" href = "../css/all.min.css">
 	<link rel = "stylesheet" href = "../css/bootstrap.css">
 	<link rel = "stylesheet" href = "../css/animate.css">
+	<link rel = "stylesheet" href = "../css/aos.css">
 	    <!-- ===== Link Swiper's CSS ===== -->
     <link rel="stylesheet" href="../css/swiper-bundle.css">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+	<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 <!-- InstanceBeginEditable name="head" -->
 <!-- InstanceEndEditable -->
 </head>
@@ -80,11 +82,11 @@
 				<!-- InstanceBeginEditable name="main" -->
 				<section id = "custom">
 					<div class = "title">
-						<h2> Bạn muốn <span style = "color: var(--primary); "> đặt hàng mô hình</span>? </h2>
-						<p> Bạn chỉ cần gửi ảnh, folder các đặc tả/thiết kế liên quan đến mô hình mà bạn muốn sở hữu: đó có thể là một biểu tượng, dáng đứng đặc trưng của nhân vật bạn yêu thích mà bạn không thể tìm thấy trong các mô hình có sẵn của <strong>Koché</strong>. Sau khi gửi, nhân viên của chúng tôi sẽ liên hệ đến bạn ngay trong vòng 24h. Lưu ý, nếu thông tin bạn cung cấp là spam, tài khoản của bạn sẽ bị <span style = "font-style: italic; font-weight: 550; ">vô hiệu hóa</span> trong vòng 3 tháng. </p>
+						<h2 data-aos = "fade-down" class = "one"> Bạn muốn <span style = "color: var(--primary); "> đặt hàng mô hình</span>? </h2>
+						<p data-aos = "zoom-in" class = "three"> Bạn chỉ cần gửi ảnh, folder các đặc tả/thiết kế liên quan đến mô hình mà bạn muốn sở hữu: đó có thể là một biểu tượng, dáng đứng đặc trưng của nhân vật bạn yêu thích mà bạn không thể tìm thấy trong các mô hình có sẵn của <strong>Koché</strong>. Sau khi gửi, nhân viên của chúng tôi sẽ liên hệ đến bạn ngay trong vòng 24h. Lưu ý, nếu thông tin bạn cung cấp là spam, tài khoản của bạn sẽ bị <span style = "font-style: italic; font-weight: 550; ">vô hiệu hóa</span> trong vòng 3 tháng. </p>
 					</div>
 					<div class = "frames">
-						<div class = "frame">
+						<div class = "frame" >
 							<img src = "../images/frame_img.png" alt = "upload">
 							<a href = "#"><h3> Gửi ảnh </h3></a>
 							<p> Vui lòng chọn ảnh rõ nét, không bị nhòe/mờ, sẽ tốt hơn nếu như có thể nhìn thấy được các khía cạnh khác nhau của nhân vật. Kèm theo đó là lời nhắn bạn muốn gửi đến <strong>Koché</strong>, chẳng hạn như kích thước mô hình mong muốn, chất liệu, giá cả... </p>
@@ -137,7 +139,11 @@
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 	<script src = "../js/style.js"></script>
 	<script src = "../js/bootstrap.bundle.js"></script>
-	<script src = "../js/jquery.min.js"></script>	
-	<script src = "../js/owl.carousel.js"></script>
+	<script src = "../js/jquery.min.js"></script>
+	<script src = "../js/aos.js"></script>
+	<script> AOS.init({
+			offset: 400,
+			duration: 1000
+		}); </script>
 </body>
 <!-- InstanceEnd --></html>
