@@ -15,9 +15,11 @@
 	<link rel = "stylesheet" href = "../css/all.min.css">
 	<link rel = "stylesheet" href = "../css/bootstrap.css">
 	<link rel = "stylesheet" href = "../css/animate.css">
+	<link rel = "stylesheet" href = "../css/aos.css">
 	    <!-- ===== Link Swiper's CSS ===== -->
     <link rel="stylesheet" href="../css/swiper-bundle.css">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+	<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 <!-- InstanceBeginEditable name="head" -->
 <!-- InstanceEndEditable -->
 </head>
@@ -76,12 +78,12 @@
 					<div class = "row">
 						<div class = "col-5" style = "text-align: center; ">
 							<div>
-								<img id = "image" src = "../images/scroll_1.png" width = "400px" height = "400px" alt = "product-img" class = "hvr-grow">
+								<img id = "image" src = "../images/scroll_1.png" width = "400px" height = "400px" alt = "product-img" class = "hvr-grow zero" data-aos="fade-down">
 							</div>
 							<div style = "margin-top: 15px; " >
-								<img onclick="change1()" src = "../images/scroll_1.png" width="120px" height="120px" alt="img" style = "cursor: pointer; ">
-								<img onclick="change2()" src = "../images/scroll_2.png" width="120px" height="120px" alt="img" style = "cursor: pointer; margin: 0 15px; ">
-								<img onclick="change3()" src = "../images/scroll_3.png" width="120px" height="120px" alt="img" style = "cursor: pointer; ">
+								<img onclick="change1()" src = "../images/scroll_1.png" width="120px" height="120px" alt="img" style = "cursor: pointer; " class = "-one animate fadeDown">
+								<img onclick="change2()" src = "../images/scroll_2.png" width="120px" height="120px" alt="img" style = "cursor: pointer; margin: 0 15px; " class = "-two animate fadeDown">
+								<img onclick="change3()" src = "../images/scroll_3.png" width="120px" height="120px" alt="img" style = "cursor: pointer; " class = "-three animate fadeDown">
 							</div>
 							<script>
 								function change1() {
@@ -97,7 +99,8 @@
 						</div>
 						
 						<div class = "col-7-semigut content">
-							<h2> Mania ga Honki de Luffy wo Produce-shitara Kounatta - <span style = "color: var(--primary); ">ONE PIECE</span></h2>
+							<div data-aos = "fade-left">
+								<h2> Mania ga Honki de Luffy wo Produce-shitara Kounatta - <span style = "color: var(--primary); ">ONE PIECE</span></h2>
 							<h2 style = "color: var(--primary); "> 1.550.000đ </h2>
 							<div style = "display: flex; align-items: center; margin: 30px 0; ">
 								<div style = "margin-right: 3vw; ">
@@ -105,7 +108,7 @@
 								</div>
 								<div style = "margin-right: 3vw; ">
 									<a href = "#"><img src = "../images/icons/plus.png" style = "width: 30px; margin-right: 1vw; " alt = "plus-icon"></a>
-									<a style = "font-size: 30px; "> 1 </a>
+									<a style = "font-size: 30px; color: var(--text); "> 1 </a>
 									<a href = "#"><img src = "../images/icons/minus.png" style = "width: 30px; margin-left: 1vw; " alt = "minus-icon"></a>
 								</div>
 								<div>
@@ -139,9 +142,10 @@
 									<p> Giao hàng tận nơi <br> Miễn phí ship với các đơn hàng &gt;1000K <br> Vui lòng kiểm tra sản phẩm khi nhận bưu kiện </p>
 								</div>
 							</div>
+							</div>
 							
-							<div class = "info">
-								<h1> <span style = "color: var(--primary); ">THÔNG TIN</span> SẢN PHẨM </h1>
+							<div class = "info" data-aos = "fade-left">
+								<h1 style = "font-size: 20px; "> <span style = "color: var(--primary); ">THÔNG TIN</span> SẢN PHẨM </h1>
 								<p> Giá cập nhật tháng 2/2022: 1.550.000đ </p>
 								<p> ONE PIECE Mania ga Honki de Luffy wo Produce-shitara Kounatta!! Monkey D. Luffy </p>
 								<p>
@@ -156,8 +160,8 @@
 					</div>
 					
 					<div class = "products">
-						<h2 style = "margin-bottom: 30px; "> Một số sản phẩm bạn sẽ thích </h2>
-						<div class="swiper mySwiper">
+						<h2 style = "margin-bottom: 30px; " class = "one" data-aos = "fade-down"> Một số sản phẩm bạn sẽ thích </h2>
+						<div class="swiper mySwiper two" data-aos = "fade-down">
 							<div class="swiper-wrapper content">
 								<div class="swiper-slide product">
 									<a href = "html/menu-product.html"><img src = "../images/jinbei.png" alt = "product-img" style = "margin-top: -5px; width: 104%; margin-left: -5px; "></a>
@@ -482,7 +486,11 @@
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 	<script src = "../js/style.js"></script>
 	<script src = "../js/bootstrap.bundle.js"></script>
-	<script src = "../js/jquery.min.js"></script>	
-	<script src = "../js/owl.carousel.js"></script>
+	<script src = "../js/jquery.min.js"></script>
+	<script src = "../js/aos.js"></script>
+	<script> AOS.init({
+			offset: 400,
+			duration: 1000
+		}); </script>
 </body>
 <!-- InstanceEnd --></html>
