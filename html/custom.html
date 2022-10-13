@@ -13,8 +13,11 @@
 	<link rel = "stylesheet" href = "../css/library.css">
 	<link rel = "stylesheet" href = "../css/hover.css">
 	<link rel = "stylesheet" href = "../css/all.min.css">
+	<link rel = "stylesheet" href = "../css/bootstrap.css">
+	<link rel = "stylesheet" href = "../css/animate.css">
+	    <!-- ===== Link Swiper's CSS ===== -->
+    <link rel="stylesheet" href="../css/swiper-bundle.css">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
-	<script src="https://kit.fontawesome.com/b99e675b6e.js"></script>
 <!-- InstanceBeginEditable name="head" -->
 <!-- InstanceEndEditable -->
 </head>
@@ -22,16 +25,29 @@
 <body id = "top">
 	<div class = "wrapper">
 
-		<div class = "navbar col-2-semigut"> 
+		<div class = "nav-bar col-2-semigut"> 
 			<a href = "../index.html"><img src = "../images/logo.png" alt = "koche-logo" class = "center"></a>
 			<ul>
-				<li><a href = "#"><i class = "fa-regular fa-user" aria-hidden = "true" style = "padding-right: 10px; "></i> Tài khoản </a></li>
-				<li><a href = "#"><i class="fa-regular fa-address-card" style = "padding-right: 7px; "></i> Về chúng tôi </a></li>
-				<li><a href = "menu.html"><i class="fa-solid fa-bars" style = "padding-right: 10px; "></i> Menu </a></li>
-				<li><a href = "menu.html"><i class="fa-regular fa-heart" style = "padding-right: 10px; "></i> Sản phẩm yêu thích </a></li>
+				<li><a href = "#" class="nav-item"><i class = "fa-regular fa-user" aria-hidden = "true" style = "padding-right: 10px; "></i> Tài khoản </a></li>
+				<li><a href = "#" class="nav-item"><i class="fa-regular fa-address-card" style = "padding-right: 7px; "></i> Về chúng tôi </a></li>
+				<li><a href = "menu.html" class="nav-item"><i class="fa-solid fa-bars" style = "padding-right: 10px; "></i> Menu </a></li>
+				<li><a href = "#" class="nav-item"><i class="fa-regular fa-heart" style = "padding-right: 9px; "></i> Sản phẩm yêu thích </a></li>
 				<li><a href = "#"><i class="fa-solid fa-list" style = "padding-right: 8px; "></i> Nhật ký mua hàng </a></li>
 	      	</ul>
 	    </div>
+		
+		<script>
+     		var btnContainer = document.getElementById("nav-bar");
+			var btns = btnContainer.getElementsByClassName("nav-item");
+			
+			for (var i = 0; i < btns.length; ++i) {
+				btns[i].addEventListener('click', function() {
+					var current = document.getElementsByClassName("active");
+					current[0].className = current[0].className.replace(" active");
+					this.className += " active";
+				})
+			}
+ 		</script>
 
 		
 		<div class = "main">
@@ -51,11 +67,11 @@
 					
 				  	<!-- InstanceBeginEditable name="banner" -->
 					<ul class = "list">
-						<li><a href = "menu.html"><h5>Menu Có Sẵn</h5></a></li>
-						<li><a href = "custom.html"><h5>Đặt Hàng</h5></a></li>
-						<li><a href = "#"><h5>Phục Chế</h5></a></li>
-						<li><a href = "menu-limit.html"><h5>Giới hạn</h5></a></li>
-						<li><a href = "#"><h5>Đấu giá</h5></a></li>
+						<li><a href = "menu.html"><h5 style = "font-weight: 550; ">Menu Có Sẵn</h5></a></li>
+						<li><a href = "custom.html"><h5 style = "font-weight: 550; ">Đặt Hàng</h5></a></li>
+						<li><a href = "#"><h5 style = "font-weight: 550; ">Phục Chế</h5></a></li>
+						<li><a href = "menu-limit.html"><h5 style = "font-weight: 550; ">Giới hạn</h5></a></li>
+						<li><a href = "#"><h5 style = "font-weight: 550; ">Đấu giá</h5></a></li>
 					</ul>
 			    	<!-- InstanceEndEditable --> </section>
 				
@@ -88,7 +104,7 @@
 	  		
 
 	  		<footer>
-	  		  <div class = "container">
+	  		  <div class = "container2">
 	  		    <div class = "row">
 	  		      <div class = "col-2-semigut"> <a href = "../index.html"><img src = "../images/footer-logo.png" alt = "logo"></a> </div>
 	  		      <div class = "col-3-gut column">
@@ -118,6 +134,10 @@
 		</div>
 	</div>
 	
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 	<script src = "../js/style.js"></script>
+	<script src = "../js/bootstrap.bundle.js"></script>
+	<script src = "../js/jquery.min.js"></script>	
+	<script src = "../js/owl.carousel.js"></script>
 </body>
 <!-- InstanceEnd --></html>
