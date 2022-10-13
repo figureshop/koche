@@ -13,8 +13,11 @@
 	<link rel = "stylesheet" href = "../css/library.css">
 	<link rel = "stylesheet" href = "../css/hover.css">
 	<link rel = "stylesheet" href = "../css/all.min.css">
+	<link rel = "stylesheet" href = "../css/bootstrap.css">
+	<link rel = "stylesheet" href = "../css/animate.css">
+	    <!-- ===== Link Swiper's CSS ===== -->
+    <link rel="stylesheet" href="../css/swiper-bundle.css">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
-	<script src="https://kit.fontawesome.com/b99e675b6e.js"></script>
 <!-- InstanceBeginEditable name="head" -->
 <!-- InstanceEndEditable -->
 </head>
@@ -22,16 +25,29 @@
 <body id = "top">
 	<div class = "wrapper">
 
-		<div class = "navbar col-2-semigut"> 
+		<div class = "nav-bar col-2-semigut"> 
 			<a href = "../index.html"><img src = "../images/logo.png" alt = "koche-logo" class = "center"></a>
 			<ul>
-				<li><a href = "#"><i class = "fa-regular fa-user" aria-hidden = "true" style = "padding-right: 10px; "></i> Tài khoản </a></li>
-				<li><a href = "#"><i class="fa-regular fa-address-card" style = "padding-right: 7px; "></i> Về chúng tôi </a></li>
-				<li><a href = "menu.html"><i class="fa-solid fa-bars" style = "padding-right: 10px; "></i> Menu </a></li>
-				<li><a href = "menu.html"><i class="fa-regular fa-heart" style = "padding-right: 10px; "></i> Sản phẩm yêu thích </a></li>
+				<li><a href = "#" class="nav-item"><i class = "fa-regular fa-user" aria-hidden = "true" style = "padding-right: 10px; "></i> Tài khoản </a></li>
+				<li><a href = "#" class="nav-item"><i class="fa-regular fa-address-card" style = "padding-right: 7px; "></i> Về chúng tôi </a></li>
+				<li><a href = "menu.html" class="nav-item"><i class="fa-solid fa-bars" style = "padding-right: 10px; "></i> Menu </a></li>
+				<li><a href = "#" class="nav-item"><i class="fa-regular fa-heart" style = "padding-right: 9px; "></i> Sản phẩm yêu thích </a></li>
 				<li><a href = "#"><i class="fa-solid fa-list" style = "padding-right: 8px; "></i> Nhật ký mua hàng </a></li>
 	      	</ul>
 	    </div>
+		
+		<script>
+     		var btnContainer = document.getElementById("nav-bar");
+			var btns = btnContainer.getElementsByClassName("nav-item");
+			
+			for (var i = 0; i < btns.length; ++i) {
+				btns[i].addEventListener('click', function() {
+					var current = document.getElementsByClassName("active");
+					current[0].className = current[0].className.replace(" active");
+					this.className += " active";
+				})
+			}
+ 		</script>
 
 		
 		<div class = "main">
@@ -77,24 +93,6 @@
 								function change3() {
 									document.getElementById('image').src="../images/scroll_3.png";
 								}
-								
-								/*const container = document.getElementById("container");
-								const img = document.querySelector("img");
-								
-								container.addEventListener("mousemove", (e) => {
-									const x = e.clientX - e.target.offsetLeft;
-									const y = e.clientY - e.target.offsetTop;
-									
-									console.log(x, y);
-									
-									img.style.transformOrigin = `${x}px ${y}px`;
-									img.style.transform = "scale(2)";
-								})
-								
-								container.addEventListener("mouseleave", () => {
-									img.style.transformOrigin = "center";
-									img.style.transform = "scale(1)";
-								})*/
 							</script>
 						</div>
 						
@@ -158,60 +156,291 @@
 					</div>
 					
 					<div class = "products">
-						<h2> Một số sản phẩm bạn sẽ thích </h2>
-						<div class = "row">
-						<div class = "product col-3">
-						<a href = "menu-product.html"><img src = "../images/jinbei.png" alt = "product-img"></a>
-						<div class = "info">
-							<h6> Jinbei - One Piece </h6>
-							<h6 style = "color: var(--primary); font-size: 15px; "> 2.700.000₫ <span>3.000.000₫</span></h6>
-							<div class = "icon">
-								<i class="fa-regular fa-heart fa-lg"></i>
-								<img src = "../images/icons/cart2.png" alt = "cart-icon" style = "width: 24px; ">
-								<a href = "menu-product.html"><button type = "button" class = "btn hvr-shadow" style = "text-align: center; ">Mua ngay</button></a>
+						<h2 style = "margin-bottom: 30px; "> Một số sản phẩm bạn sẽ thích </h2>
+						<div class="swiper mySwiper">
+							<div class="swiper-wrapper content">
+								<div class="swiper-slide product">
+									<a href = "html/menu-product.html"><img src = "../images/jinbei.png" alt = "product-img" style = "margin-top: -5px; width: 104%; margin-left: -5px; "></a>
+									<div class = "info">
+										<h6 style = "margin-top: -25px; "> Jinbei - One Piece </h6>
+										<h6 style = "color: var(--primary); font-size: 15px; "> 2.700.000₫ <span>3.000.000₫</span></h6>
+										<div class = "icon" style = "margin-bottom: -25px; ">
+											<i class="fa-regular fa-heart fa-lg"></i>
+											<img src = "../images/icons/cart2.png" alt = "cart-icon" style = "width: 24px; ">
+											<a href = "html/menu.html"><button type = "button" class = "btn">Mua ngay</button></a>
+										</div>
+									</div>
+								</div>
+							
+							<div class="swiper-slide product">
+								<a href = "html/menu-product.html"><img src = "../images/luffy.png" alt = "product-img" style = "margin-top: -4px; width: 100%; "></a>
+								<div class = "info">
+									<h6 style = "margin-top: -25px; "> Luffy Gear 4 - One Piece </h6>
+									<h6 style = "color: var(--primary); font-size: 15px; "> 3.500.000₫ <span>3.950.000₫</span></h6>
+									<div class = "icon" style = "margin-bottom: -25px; ">
+										<i class="fa-regular fa-heart fa-lg"></i>
+										<img src = "../images/icons/cart2.png" alt = "cart-icon" style = "width: 24px; ">
+										<a href = "html/menu.html"><button type = "button" class = "btn">Mua ngay</button></a>
+									</div>
+								</div>
 							</div>
-						</div>
-					</div>
-					<div class = "product col-3">
-						<a href = "menu-product.html"><img src = "../images/luffy.png" alt = "product-img" style = "margin-top: -4px; "></a>
-						<div class = "info">
-							<h6> Luffy Gear 4 - One Piece </h6>
-							<h6 style = "color: var(--primary); font-size: 15px; "> 3.500.000₫ <span>3.950.000₫</span></h6>
-							<div class = "icon">
-								<i class="fa-regular fa-heart fa-lg"></i>
-								<img src = "../images/icons/cart2.png" alt = "cart-icon" style = "width: 24px; ">
-								<a><button type = "button" class = "btn">Mua ngay</button></a>
+							
+							<div class="swiper-slide product">
+								<a href = "html/menu-product.html"><img src = "../images/luffy2.png" alt = "product-img" style = "margin-top: -4px; width: 100%; "></a>
+								<div class = "info">
+									<h6 style = "margin-top: -25px; "> Monkey D. Luffy - One Piece </h6>
+									<h6 style = "color: var(--primary); font-size: 15px; "> 1.250.000₫ <span>1.300.000₫</span></h6>
+									<div class = "icon" style = "margin-bottom: -25px; ">
+										<i class="fa-regular fa-heart fa-lg"></i>
+										<img src = "../images/icons/cart2.png" alt = "cart-icon" style = "width: 24px; ">
+										<a href = "html/menu.html"><button type = "button" class = "btn">Mua ngay</button></a>
+									</div>
+								</div>
+							</div>	
+							
+							<div class="swiper-slide product">
+								<a href = "html/menu-product.html"><img src = "../images/rautrang.png" alt = "product-img" style = "margin-top: -4px; width: 100%; "></a>
+								<div class = "info">
+									<h6 style = "margin-top: -25px; "> Zero - One Piece </h6>
+									<h6 style = "color: var(--primary); font-size: 15px; "> 2.700.000₫ <span>2.800.000₫</span></h6>
+									<div class = "icon" style = "margin-bottom: -25px; ">
+										<i class="fa-regular fa-heart fa-lg"></i>
+										<img src = "../images/icons/cart2.png" alt = "cart-icon" style = "width: 24px; ">
+										<a href = "html/menu.html"><button type = "button" class = "btn">Mua ngay</button></a>
+									</div>
+								</div>
 							</div>
-						</div>
-					</div>
-					<div class = "product col-3">
-						<a href = "menu-product.html"><img src = "../images/luffy2.png" alt = "product-img" style = "margin-top: -4px; "></a>
-						<div class = "info">
-							<h6> Monkey D. Luffy - One Piece </h6>
-							<h6 style = "color: var(--primary); font-size: 15px; "> 1.250.000₫ <span>1.300.000₫</span></h6>
-							<div class = "icon">
-								<i class="fa-regular fa-heart fa-lg"></i>
-								<img src = "../images/icons/cart2.png" alt = "cart-icon" style = "width: 24px; ">
-								<a><button type = "button" class = "btn">Mua ngay</button></a>
+							
+							<div class="swiper-slide product">
+								<a href = "html/menu-product.html"><img src = "../images/jinbei.png" alt = "product-img" style = "margin-top: -5px; width: 104%; margin-left: -5px; "></a>
+								<div class = "info">
+									<h6 style = "margin-top: -25px; "> Jinbei - One Piece </h6>
+									<h6 style = "color: var(--primary); font-size: 15px; "> 2.700.000₫ <span>3.000.000₫</span></h6>
+									<div class = "icon" style = "margin-bottom: -25px; ">
+										<i class="fa-regular fa-heart fa-lg"></i>
+										<img src = "../images/icons/cart2.png" alt = "cart-icon" style = "width: 24px; ">
+										<a href = "html/menu.html"><button type = "button" class = "btn">Mua ngay</button></a>
+									</div>
+								</div>
 							</div>
-						</div>
-					</div>
-					<div class = "product col-3">
-						<a href = "menu-product.html"><img src = "../images/rautrang.png" alt = "product-img" style = "margin-top: -4px; "></a>
-						<div class = "info">
-							<h6> Zero - One Piece </h6>
-							<h6 style = "color: var(--primary); font-size: 15px; "> 2.700.000₫ <span>2.800.000₫</span></h6>
-							<div class = "icon">
-								<i class="fa-regular fa-heart fa-lg"></i>
-								<img src = "../images/icons/cart2.png" alt = "cart-icon" style = "width: 24px; ">
-								<a><button type = "button" class = "btn">Mua ngay</button></a>
+							
+							<div class="swiper-slide product">
+								<a href = "html/menu-product.html"><img src = "../images/luffy.png" alt = "product-img" style = "margin-top: -4px; width: 100%; "></a>
+								<div class = "info">
+									<h6 style = "margin-top: -25px; "> Luffy Gear 4 - One Piece </h6>
+									<h6 style = "color: var(--primary); font-size: 15px; "> 3.500.000₫ <span>3.950.000₫</span></h6>
+									<div class = "icon" style = "margin-bottom: -25px; ">
+										<i class="fa-regular fa-heart fa-lg"></i>
+										<img src = "../images/icons/cart2.png" alt = "cart-icon" style = "width: 24px; ">
+										<a href = "html/menu.html"><button type = "button" class = "btn">Mua ngay</button></a>
+									</div>
+								</div>
 							</div>
-						</div>
+							
+							<div class="swiper-slide product">
+								<a href = "html/menu-product.html"><img src = "../images/luffy2.png" alt = "product-img" style = "margin-top: -4px; width: 100%; "></a>
+								<div class = "info">
+									<h6 style = "margin-top: -25px; "> Monkey D. Luffy - One Piece </h6>
+									<h6 style = "color: var(--primary); font-size: 15px; "> 1.250.000₫ <span>1.300.000₫</span></h6>
+									<div class = "icon" style = "margin-bottom: -25px; ">
+										<i class="fa-regular fa-heart fa-lg"></i>
+										<img src = "../images/icons/cart2.png" alt = "cart-icon" style = "width: 24px; ">
+										<a href = "html/menu.html"><button type = "button" class = "btn">Mua ngay</button></a>
+									</div>
+								</div>
+							</div>	
+							
+							<div class="swiper-slide product">
+								<a href = "html/menu-product.html"><img src = "../images/rautrang.png" alt = "product-img" style = "margin-top: -4px; width: 100%; "></a>
+								<div class = "info">
+									<h6 style = "margin-top: -25px; "> Zero - One Piece </h6>
+									<h6 style = "color: var(--primary); font-size: 15px; "> 2.700.000₫ <span>2.800.000₫</span></h6>
+									<div class = "icon" style = "margin-bottom: -25px; ">
+										<i class="fa-regular fa-heart fa-lg"></i>
+										<img src = "../images/icons/cart2.png" alt = "cart-icon" style = "width: 24px; ">
+										<a href = "html/menu.html"><button type = "button" class = "btn">Mua ngay</button></a>
+									</div>
+								</div>
+							</div>
+							
+							<div class="swiper-slide product">
+								<a href = "html/menu-product.html"><img src = "../images/jinbei.png" alt = "product-img" style = "margin-top: -5px; width: 104%; margin-left: -5px; "></a>
+								<div class = "info">
+									<h6 style = "margin-top: -25px; "> Jinbei - One Piece </h6>
+									<h6 style = "color: var(--primary); font-size: 15px; "> 2.700.000₫ <span>3.000.000₫</span></h6>
+									<div class = "icon" style = "margin-bottom: -25px; ">
+										<i class="fa-regular fa-heart fa-lg"></i>
+										<img src = "../images/icons/cart2.png" alt = "cart-icon" style = "width: 24px; ">
+										<a href = "html/menu.html"><button type = "button" class = "btn">Mua ngay</button></a>
+									</div>
+								</div>
+							</div>
+							
+							<div class="swiper-slide product">
+								<a href = "html/menu-product.html"><img src = "../images/luffy.png" alt = "product-img" style = "margin-top: -4px; width: 100%; "></a>
+								<div class = "info">
+									<h6 style = "margin-top: -25px; "> Luffy Gear 4 - One Piece </h6>
+									<h6 style = "color: var(--primary); font-size: 15px; "> 3.500.000₫ <span>3.950.000₫</span></h6>
+									<div class = "icon" style = "margin-bottom: -25px; ">
+										<i class="fa-regular fa-heart fa-lg"></i>
+										<img src = "../images/icons/cart2.png" alt = "cart-icon" style = "width: 24px; ">
+										<a href = "html/menu.html"><button type = "button" class = "btn">Mua ngay</button></a>
+									</div>
+								</div>
+							</div>
+							
+							<div class="swiper-slide product">
+								<a href = "html/menu-product.html"><img src = "../images/luffy2.png" alt = "product-img" style = "margin-top: -4px; width: 100%; "></a>
+								<div class = "info">
+									<h6 style = "margin-top: -25px; "> Monkey D. Luffy - One Piece </h6>
+									<h6 style = "color: var(--primary); font-size: 15px; "> 1.250.000₫ <span>1.300.000₫</span></h6>
+									<div class = "icon" style = "margin-bottom: -25px; ">
+										<i class="fa-regular fa-heart fa-lg"></i>
+										<img src = "../images/icons/cart2.png" alt = "cart-icon" style = "width: 24px; ">
+										<a href = "html/menu.html"><button type = "button" class = "btn">Mua ngay</button></a>
+									</div>
+								</div>
+							</div>	
+							
+							<div class="swiper-slide product">
+								<a href = "html/menu-product.html"><img src = "../images/rautrang.png" alt = "product-img" style = "margin-top: -4px; width: 100%; "></a>
+								<div class = "info">
+									<h6 style = "margin-top: -25px; "> Zero - One Piece </h6>
+									<h6 style = "color: var(--primary); font-size: 15px; "> 2.700.000₫ <span>2.800.000₫</span></h6>
+									<div class = "icon" style = "margin-bottom: -25px; ">
+										<i class="fa-regular fa-heart fa-lg"></i>
+										<img src = "../images/icons/cart2.png" alt = "cart-icon" style = "width: 24px; ">
+										<a href = "html/menu.html"><button type = "button" class = "btn">Mua ngay</button></a>
+									</div>
+								</div>
+							</div>
+							
+							<div class="swiper-slide product">
+								<a href = "html/menu-product.html"><img src = "../images/jinbei.png" alt = "product-img" style = "margin-top: -5px; width: 104%; margin-left: -5px; "></a>
+								<div class = "info">
+									<h6 style = "margin-top: -25px; "> Jinbei - One Piece </h6>
+									<h6 style = "color: var(--primary); font-size: 15px; "> 2.700.000₫ <span>3.000.000₫</span></h6>
+									<div class = "icon" style = "margin-bottom: -25px; ">
+										<i class="fa-regular fa-heart fa-lg"></i>
+										<img src = "../images/icons/cart2.png" alt = "cart-icon" style = "width: 24px; ">
+										<a href = "html/menu.html"><button type = "button" class = "btn">Mua ngay</button></a>
+									</div>
+								</div>
+							</div>
+							
+							<div class="swiper-slide product">
+								<a href = "html/menu-product.html"><img src = "../images/luffy.png" alt = "product-img" style = "margin-top: -4px; width: 100%; "></a>
+								<div class = "info">
+									<h6 style = "margin-top: -25px; "> Luffy Gear 4 - One Piece </h6>
+									<h6 style = "color: var(--primary); font-size: 15px; "> 3.500.000₫ <span>3.950.000₫</span></h6>
+									<div class = "icon" style = "margin-bottom: -25px; ">
+										<i class="fa-regular fa-heart fa-lg"></i>
+										<img src = "../images/icons/cart2.png" alt = "cart-icon" style = "width: 24px; ">
+										<a href = "html/menu.html"><button type = "button" class = "btn">Mua ngay</button></a>
+									</div>
+								</div>
+							</div>
+							
+							<div class="swiper-slide product">
+								<a href = "html/menu-product.html"><img src = "../images/luffy2.png" alt = "product-img" style = "margin-top: -4px; width: 100%; "></a>
+								<div class = "info">
+									<h6 style = "margin-top: -25px; "> Monkey D. Luffy - One Piece </h6>
+									<h6 style = "color: var(--primary); font-size: 15px; "> 1.250.000₫ <span>1.300.000₫</span></h6>
+									<div class = "icon" style = "margin-bottom: -25px; ">
+										<i class="fa-regular fa-heart fa-lg"></i>
+										<img src = "../images/icons/cart2.png" alt = "cart-icon" style = "width: 24px; ">
+										<a href = "html/menu.html"><button type = "button" class = "btn">Mua ngay</button></a>
+									</div>
+								</div>
+							</div>	
+							
+							<div class="swiper-slide product">
+								<a href = "html/menu-product.html"><img src = "../images/rautrang.png" alt = "product-img" style = "margin-top: -4px; width: 100%; "></a>
+								<div class = "info">
+									<h6 style = "margin-top: -25px; "> Zero - One Piece </h6>
+									<h6 style = "color: var(--primary); font-size: 15px; "> 2.700.000₫ <span>2.800.000₫</span></h6>
+									<div class = "icon" style = "margin-bottom: -25px; ">
+										<i class="fa-regular fa-heart fa-lg"></i>
+										<img src = "../images/icons/cart2.png" alt = "cart-icon" style = "width: 24px; ">
+										<a href = "html/menu.html"><button type = "button" class = "btn">Mua ngay</button></a>
+									</div>
+								</div>
+							</div>
+							
+							<div class="swiper-slide product">
+								<a href = "html/menu-product.html"><img src = "../images/jinbei.png" alt = "product-img" style = "margin-top: -5px; width: 104%; margin-left: -5px; "></a>
+								<div class = "info">
+									<h6 style = "margin-top: -25px; "> Jinbei - One Piece </h6>
+									<h6 style = "color: var(--primary); font-size: 15px; "> 2.700.000₫ <span>3.000.000₫</span></h6>
+									<div class = "icon" style = "margin-bottom: -25px; ">
+										<i class="fa-regular fa-heart fa-lg"></i>
+										<img src = "../images/icons/cart2.png" alt = "cart-icon" style = "width: 24px; ">
+										<a href = "html/menu.html"><button type = "button" class = "btn">Mua ngay</button></a>
+									</div>
+								</div>
+							</div>
+							
+							<div class="swiper-slide product">
+								<a href = "html/menu-product.html"><img src = "../images/luffy.png" alt = "product-img" style = "margin-top: -4px; width: 100%; "></a>
+								<div class = "info">
+									<h6 style = "margin-top: -25px; "> Luffy Gear 4 - One Piece </h6>
+									<h6 style = "color: var(--primary); font-size: 15px; "> 3.500.000₫ <span>3.950.000₫</span></h6>
+									<div class = "icon" style = "margin-bottom: -25px; ">
+										<i class="fa-regular fa-heart fa-lg"></i>
+										<img src = "../images/icons/cart2.png" alt = "cart-icon" style = "width: 24px; ">
+										<a href = "html/menu.html"><button type = "button" class = "btn">Mua ngay</button></a>
+									</div>
+								</div>
+							</div>
+							
+							<div class="swiper-slide product">
+								<a href = "html/menu-product.html"><img src = "../images/luffy2.png" alt = "product-img" style = "margin-top: -4px; width: 100%; "></a>
+								<div class = "info">
+									<h6 style = "margin-top: -25px; "> Monkey D. Luffy - One Piece </h6>
+									<h6 style = "color: var(--primary); font-size: 15px; "> 1.250.000₫ <span>1.300.000₫</span></h6>
+									<div class = "icon" style = "margin-bottom: -25px; ">
+										<i class="fa-regular fa-heart fa-lg"></i>
+										<img src = "../images/icons/cart2.png" alt = "cart-icon" style = "width: 24px; ">
+										<a href = "html/menu.html"><button type = "button" class = "btn">Mua ngay</button></a>
+									</div>
+								</div>
+							</div>	
+							
+							<div class="swiper-slide product">
+								<a href = "html/menu-product.html"><img src = "../images/rautrang.png" alt = "product-img" style = "margin-top: -4px; width: 100%; "></a>
+								<div class = "info">
+									<h6 style = "margin-top: -25px; "> Zero - One Piece </h6>
+									<h6 style = "color: var(--primary); font-size: 15px; "> 2.700.000₫ <span>2.800.000₫</span></h6>
+									<div class = "icon" style = "margin-bottom: -25px; ">
+										<i class="fa-regular fa-heart fa-lg"></i>
+										<img src = "../images/icons/cart2.png" alt = "cart-icon" style = "width: 24px; ">
+										<a href = "html/menu.html"><button type = "button" class = "btn">Mua ngay</button></a>
+									</div>
+								</div>
+							</div>	
+   						 </div>
 					</div>
 					</div>
-					</div>
-					
 				</section>
+				
+				<script src = "../js/swiper-bundle.js"></script>
+				<script>
+				var swiper = new Swiper(".mySwiper", {
+				  slidesPerView: 3,
+				  spaceBetween: 30,
+				  slidesPerGroup: 3,
+				  loop: true,
+				  loopFillGroupWithBlank: true,
+				  pagination: {
+					el: ".swiper-pagination",
+					clickable: true,
+				  },
+				  navigation: {
+					nextEl: ".swiper-button-next",
+					prevEl: ".swiper-button-prev",
+				  },
+				});
+			  </script>			
 				<!-- InstanceEndEditable -->
 				
 				<!-- ****************************************************************************** -->
@@ -220,7 +449,7 @@
 	  		
 
 	  		<footer>
-	  		  <div class = "container">
+	  		  <div class = "container2">
 	  		    <div class = "row">
 	  		      <div class = "col-2-semigut"> <a href = "../index.html"><img src = "../images/footer-logo.png" alt = "logo"></a> </div>
 	  		      <div class = "col-3-gut column">
@@ -250,6 +479,10 @@
 		</div>
 	</div>
 	
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 	<script src = "../js/style.js"></script>
+	<script src = "../js/bootstrap.bundle.js"></script>
+	<script src = "../js/jquery.min.js"></script>	
+	<script src = "../js/owl.carousel.js"></script>
 </body>
 <!-- InstanceEnd --></html>
