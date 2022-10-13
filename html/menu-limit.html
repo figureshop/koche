@@ -15,9 +15,11 @@
 	<link rel = "stylesheet" href = "../css/all.min.css">
 	<link rel = "stylesheet" href = "../css/bootstrap.css">
 	<link rel = "stylesheet" href = "../css/animate.css">
+	<link rel = "stylesheet" href = "../css/aos.css">
 	    <!-- ===== Link Swiper's CSS ===== -->
     <link rel="stylesheet" href="../css/swiper-bundle.css">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+	<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 <!-- InstanceBeginEditable name="head" -->
 <!-- InstanceEndEditable -->
 </head>
@@ -104,7 +106,7 @@
 					</ul>
 					
 					<div class = "products">
-						<div class = "row">
+						<div class = "row" data-aos="fade-down">
 							<div class = "product col-3 hvr-grow">
 								<a href = "menu-product.html"><img src = "../images/allmight.png" alt = "product-img"></a>
 								<div class = "info">
@@ -154,7 +156,7 @@
 								</div>
 							</div>
 						</div>
-						<div class = "row">
+						<div class = "row" data-aos="fade-down">
 							<div class = "product col-3 hvr-grow">
 								<a href = "menu-product.html"><img src = "../images/jiraiya.png" alt = "product-img"></a>
 								<div class = "info">
@@ -204,7 +206,7 @@
 								</div>
 							</div>
 						</div>
-						<div class = "row">
+						<div class = "row" data-aos="fade-down">
 							<div class = "product col-3 hvr-grow">
 								<a href = "menu-product.html"><img src = "../images/allmight.png" alt = "product-img"></a>
 								<div class = "info">
@@ -302,7 +304,11 @@
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 	<script src = "../js/style.js"></script>
 	<script src = "../js/bootstrap.bundle.js"></script>
-	<script src = "../js/jquery.min.js"></script>	
-	<script src = "../js/owl.carousel.js"></script>
+	<script src = "../js/jquery.min.js"></script>
+	<script src = "../js/aos.js"></script>
+	<script> AOS.init({
+			offset: 400,
+			duration: 1000
+		}); </script>
 </body>
 <!-- InstanceEnd --></html>
