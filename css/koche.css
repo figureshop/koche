@@ -88,11 +88,6 @@ section {
   	width: 27px;
 }
 
-.wrapper .nav-bar ul li:hover {
-  	font-weight: bold;
-}
-
-
 .wrapper .nav-bar ul li a {
 	/*transition: width 2s;
 	transition-timing-function: ease-out;*/
@@ -114,7 +109,6 @@ section {
 -webkit-text-fill-color: transparent;
 background-clip: text;
 text-fill-color: transparent;
-	font-weight: 550;
 }
 
 .wrapper .main {
@@ -797,18 +791,3 @@ text-fill-color: transparent;
 	-webkit-animation-name: fadeRight;
 	animation-name: fadeRight;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
