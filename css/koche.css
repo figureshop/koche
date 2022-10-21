@@ -141,7 +141,7 @@ text-fill-color: transparent;
 	border: none;
 	font-size: 15px;
 	font-family: 'Inter', sans-serif;
-	padding: 24px 12vw;
+	padding: 20px 6vw;
 	border-radius: var(--radius);
 	text-align: left;
  }
